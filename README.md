@@ -13,3 +13,7 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
 
 * Öppna Visual Studio Code
 * Hitta och öppna filen _**index.html**_
+
+### Steg 3
+
+* 
