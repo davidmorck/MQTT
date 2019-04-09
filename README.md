@@ -17,7 +17,7 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
 ### Steg 3
 
 * Kopiera in koden nedan:
-'''javascript
+´´´javascript
   
     function redLamp(){
         currentValue = document.getElementById("redSwitch").checked;
@@ -65,4 +65,4 @@ function startConnect() {
 }
 
 startConnect();
-'''
+´´´
