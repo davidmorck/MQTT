@@ -16,14 +16,10 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
 
 ### Steg 3
 
-* Kopiera in koden nedan:
+* Kopiera in koden nedan i javascript filen:
 
 ´´´javascript
-    function redLamp(){
-        currentValue = document.getElementById("redSwitch").checked;
-        console.log(currentValue);
-        (currentValue) ? sendViaMQTT("redOn") : sendViaMQTT("redOff")
-    }
+var hej;
     
 
 ´´´
