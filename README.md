@@ -74,5 +74,5 @@ startConnect(); // säger att vi ska ansluta till MQTT direkt när programmet st
 * Öppna Arduino programmet och skapa en ny fil
 * Kopiera in koden nedan:
 ```c++
-int hej = 0;
+
 ```
