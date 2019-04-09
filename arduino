@@ -1,0 +1,62 @@
+#include "EspMQTTClient.h"
+void onConnectionEstablished();
+
+#define led_pin D1
+#define led_pin1 D2
+#define led_pin2 D3
+
+EspMQTTClient client(
+  "ABBIndgymIoT_2.4GHz",           // Wifi ssid
+  "ValkommenHit!",           // Wifi password
+  "10.22.2.127",  // MQTT broker ip
+  1884,             // MQTT broker port
+  "jocke",            // MQTT username
+  "apa",       // MQTT password
+  "mikrodator",          // Client name
+  onConnectionEstablished, // Connection established callback
+  true,             // Enable web updater
+  true              // Enable debug messages
+);
+
+void setup()
+{  pinMode(led_pin, OUTPUT);
+   digitalWrite(led_pin, LOW);
+   pinMode(led_pin1, OUTPUT);
+   digitalWrite(led_pin1, LOW);
+   pinMode(led_pin2, OUTPUT);
+   digitalWrite(led_pin2, LOW);
+    
+  Serial.begin(115200);
+}
+
+//Skickar in siffra, om siffra.
+void Lamp(int command){
+  if (command == 1)
+    digitalWrite(led_pin, HIGH);
+  else if (command == 2)
+    digitalWrite(led_pin1, HIGH);
+  else if (command == 3)
+    digitalWrite(led_pin2, HIGH); 
+}
+
+void onConnectionEstablished()
+{
+  client.subscribe("mess", [] (const String &payload)
+  {
+    Serial.println(payload);
+  });
+
+    client.subscribe("lamp/lampa", [] (const String &payload)
+  {
+        Serial.println(payload);
+        //Gör om payload till ett nummer värde
+        int number= payload.toInt();
+   // if(payload=="change")W
+    Lamp(number);
+  });
+} 
+
+void loop()
+{
+  client.loop();
+}
