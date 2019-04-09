@@ -18,8 +18,7 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
 
 * Kopiera in koden nedan:
 ´´´javascript
-  
-    function redLamp(){
+   function redLamp(){
         currentValue = document.getElementById("redSwitch").checked;
         console.log(currentValue);
         (currentValue) ? sendViaMQTT("redOn") : sendViaMQTT("redOff")
@@ -32,9 +31,8 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
     function blueLamp(){
         currentValue = document.getElementById("blueSwitch").checked;
         console.log(currentValue);
-        (currentValue) ? sendViaMQTT("blueOn") : sendViaMQTT("blueOff")
+        (currentValue) ? sendViaMQTT("blueOn") : sendViaMQTT("blueOff");
     }
-    
     function sendViaMQTT(color){
         console.log(color);
         message = new Paho.MQTT.Message(color.toString());
@@ -55,9 +53,7 @@ function startConnect() {
     clientID = "clientID_" + parseInt(Math.random() * 100);
     host = "10.22.2.127";
     port = 1884;
-
     client = new Paho.MQTT.Client(host, Number(port), clientID);
-
     client.connect({ 
         onSuccess: onConnect,
         onFailure: onFail
