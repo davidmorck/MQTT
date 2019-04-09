@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <div class="container">
+
+    <div class="custom-control custom-switch switch">
+        <input type="checkbox" class="custom-control-input" id="redSwitch" onChange="redLamp()">
+        <label class="custom-control-label red" for="redSwitch">Röd Lampa</label>
+    </div>
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="greenSwitch" onChange="greenLamp()">
+        <label class="custom-control-label green" for="greenSwitch">Grön Lampa</label>
+    </div>
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="blueSwitch" onChange="blueLamp()">
+        <label class="custom-control-label blue" for="blueSwitch">Blå Lampa</label>
+    </div>
+    <div id="messages"></div>
+
+  </div>
+  
+
+
+</body>
+</html>
