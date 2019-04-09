@@ -68,3 +68,11 @@ startConnect(); // säger att vi ska ansluta till MQTT direkt när programmet st
 ```
 
 * Titta igenom koden och läs igenom kommentarerna för att öka förståelsen.
+* Öppna _**index.html**_ filen för att se hur hemsidan ser ut.  
+
+### Steg 4
+* Öppna Arduino programmet och skapa en ny fil
+* Kopiera in koden nedan:
+```c++
+int hej = 0;
+```
