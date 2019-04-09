@@ -4,16 +4,17 @@
         console.log(currentValue);
         (currentValue) ? sendViaMQTT("redOn") : sendViaMQTT("redOff")
     }
+    function yellowLamp(){
+        currentValue = document.getElementById("yellowSwitch").checked;
+        console.log(currentValue);
+        (currentValue) ? sendViaMQTT("yellowOn") : sendViaMQTT("yellowOff")
+    }
     function greenLamp(){
         currentValue = document.getElementById("greenSwitch").checked;
         console.log(currentValue);
         (currentValue) ? sendViaMQTT("greenOn") : sendViaMQTT("greenOff")
     }
-    function blueLamp(){
-        currentValue = document.getElementById("blueSwitch").checked;
-        console.log(currentValue);
-        (currentValue) ? sendViaMQTT("blueOn") : sendViaMQTT("blueOff")
-    }
+   
     
     function sendViaMQTT(color){
         console.log(color);
@@ -33,7 +34,7 @@ function onFail(){
 function startConnect() {
     // Generate a random client ID
     clientID = "clientID_" + parseInt(Math.random() * 100);
-    host = "10.22.2.127";
+    host = "192.168.0.116";
     port = 1884;
     // Fetch the hostname/IP address and port number from the form
 
