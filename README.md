@@ -20,6 +20,4 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
 
 ´´´javascript
 var hej;
-    
-
 ´´´
