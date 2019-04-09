@@ -18,6 +18,6 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
 
 * Kopiera in koden nedan i javascript filen:
 
-´´´javascript
+```javascript
 var hej;
-´´´
+```
