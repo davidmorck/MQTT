@@ -66,3 +66,5 @@ function startConnect() { // ansluter till MQTT
 
 startConnect(); // säger att vi ska ansluta till MQTT direkt när programmet startar
 ```
+
+* Titta igenom koden och läs igenom kommentarerna för att öka förståelsen.
