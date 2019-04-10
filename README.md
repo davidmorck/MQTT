@@ -53,7 +53,7 @@ function onFail(){ // om vi misslyckas ansluta till MQTT
 
 function startConnect() { // ansluter till MQTT
     clientID = "clientID_" + parseInt(Math.random() * 100);
-    host = "10.22.2.127";   # måste ändras för varje person
+    host = "10.22.2.127";   // måste ändras för varje person
     port = 1884;
     
     client = new Paho.MQTT.Client(host, Number(port), clientID);
