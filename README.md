@@ -157,15 +157,17 @@ void loop()
 }
 ```
 ### Steg 5
-* kopla arduino kortet enligt bilden i filen Screenshot (16).png till pinarna D1, D2, D3 i stället och GND
-* ladda arduino programet på kortet 
+* Kopla arduino kortet enligt bilden i filen Screenshot (16).png till pinarna D1, D2, D3 i stället och GND
+* Ladda arduino programet på kortet 
 
 
 ### Steg 6
-* starta borckern genom att skriva först i terminalen _**npm install**_ för att instalera bibliotek som behövs
-* sedan skriv _**npm start**_ för att starta programet
+* Starta borckern genom att skriva först i terminalen _**npm install**_ för att instalera bibliotek som behövs
+* Sedan skriv _**npm start**_ för att starta programet
 
-
+### Steg 7
+* Efter att man har startat brockern och arduino programet kan man starta web sidan
+* Gå in i web browsern och skriv följande _**localhost:1884**_ 
 
 
 
