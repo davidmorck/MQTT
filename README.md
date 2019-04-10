@@ -157,12 +157,12 @@ void loop()
 }
 ```
 ### Steg 5
-* Kopla arduino kortet enligt bilden i filen till pinarna D1, D2, D3 i stället och GND
+* Kopla arduino kortet enligt bilden nedan till pinarna D1, D2, D3 för varje lampa (vi har tre lampor) och GND (ground)
+![alt text](https://github.com/davidmorck/MQTT/blob/master/button-control-led1.jpg?raw=true)
 * Ladda arduino programet på kortet 
-![alt text](https://github.com/davidmorck/MQTT/blob/master/Screenshot%20(16).png?raw=true)
 
 ### Steg 6
-* Starta borckern genom att skriva först i terminalen _**npm install**_ för att instalera bibliotek som behövs
+* Starta brockern genom att skriva först i terminalen _**npm install**_ för att instalera bibliotek som behövs
 * Sedan skriv _**npm start**_ för att starta programet
 
 ### Steg 7
