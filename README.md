@@ -84,5 +84,76 @@ startConnect(); // säger att vi ska ansluta till MQTT direkt när programmet st
 * Öppna Arduino programmet och skapa en ny fil
 * Kopiera in koden nedan:
 ```c++
+#include "EspMQTTClient.h"
+void onConnectionEstablished();
+
+#define led_pin D1 // red
+#define led_pin1 D2 // yellow
+#define led_pin2 D3 // green
+
+EspMQTTClient client(
+  "ABBIndgymIoT_2.4GHz",           // Wifi ssid
+  "ValkommenHit!",           // Wifi password
+  "192.168.0.116",  // MQTT broker ip
+  1883,             // MQTT broker port
+  "jocke",            // MQTT username
+  "apa",       // MQTT password
+  "mikrodator",          // Client name
+  onConnectionEstablished, // Connection established callback
+  true,             // Enable web updater
+  true              // Enable debug messages
+);
+
+void setup()
+{  pinMode(led_pin, OUTPUT);
+   digitalWrite(led_pin, LOW);
+   pinMode(led_pin1, OUTPUT);
+   digitalWrite(led_pin1, LOW);
+   pinMode(led_pin2, OUTPUT);
+   digitalWrite(led_pin2, LOW);
+    
+  Serial.begin(115200);
+}
+
+//Skickar in siffra, om siffra är 0 så släck, 1 så tänd, över det så är det antal gånger den ska blinka.
+void Lamp(String command){
+  if (command == "redOn")
+    digitalWrite(led_pin, HIGH);
+  else if (command == "redOff")
+    digitalWrite(led_pin, LOW);
+  else if (command == "yellowOn")
+    digitalWrite(led_pin1, HIGH);
+  else if (command == "yellowOff")
+    digitalWrite(led_pin1, LOW);
+  else if (command == "greenOn")
+    digitalWrite(led_pin2, HIGH); 
+  else if (command == "greenOff")
+    digitalWrite(led_pin2, LOW);
+}
+
+void onConnectionEstablished()
+{
+  client.subscribe("mess", [] (const String &payload)
+  {
+    Serial.println(payload);
+  });
+
+    client.subscribe("lamp/lampa", [] (const String &payload)
+  {
+        Serial.println(payload);
+        //Gör om payload till ett nummer värde
+    //    int number= payload.toInt();
+   // if(payload=="change")W
+    Lamp(payload);
+  });
+} 
+
+void loop()
+{
+
+ //getTemperature();
+   //  delay(5000);
+  client.loop();
+}
 
 ```
