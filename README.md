@@ -157,7 +157,7 @@ void loop()
 }
 ```
 ### Steg 5
-* Kopla arduino kortet enligt bilden i filen Screenshot (16).png till pinarna D1, D2, D3 i stället och GND
+* Kopla arduino kortet enligt bilden i filen ![alt text](Screenshot (16).png) till pinarna D1, D2, D3 i stället och GND
 * Ladda arduino programet på kortet 
 
 
