@@ -155,5 +155,17 @@ void loop()
    //  delay(5000);
   client.loop();
 }
-
 ```
+### Steg 5
+* kopla arduino kortet enligt bilden i filen Screenshot (16).png till pinarna D1, D2, D3 i stället och GND
+* ladda arduino programet på kortet 
+
+
+### Steg 6
+* starta borckern genom att skriva först i terminalen 
+
+
+
+
+
+
