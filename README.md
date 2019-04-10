@@ -162,7 +162,10 @@ void loop()
 
 
 ### Steg 6
-* starta borckern genom att skriva först i terminalen 
+* starta borckern genom att skriva först i terminalen _**npm install**_ för att instalera bibliotek som behövs
+* sedan skriv _**npm start**_ för att starta programet
+
+
 
 
 
