@@ -157,9 +157,9 @@ void loop()
 }
 ```
 ### Steg 5
-* Kopla arduino kortet enligt bilden i filen ![alt text](Screenshot (16).png) till pinarna D1, D2, D3 i stället och GND
+* Kopla arduino kortet enligt bilden i filen till pinarna D1, D2, D3 i stället och GND
 * Ladda arduino programet på kortet 
-
+![alt text](https://github.com/davidmorck/MQTT/blob/master/Screenshot%20(16).png?raw=true)
 
 ### Steg 6
 * Starta borckern genom att skriva först i terminalen _**npm install**_ för att instalera bibliotek som behövs
