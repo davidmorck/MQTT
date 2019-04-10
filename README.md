@@ -20,43 +20,53 @@ För att illustrera hur snabb och enkel standarden är kommer vi idag göra en f
 
 ```javascript
 
+
     function redLamp(){ // när vi trycker på den röda knappen på hemsidan så skickas "redOn" eller "redOff" till MQTT
         currentValue = document.getElementById("redSwitch").checked;
         console.log(currentValue);
         (currentValue) ? sendViaMQTT("redOn") : sendViaMQTT("redOff")
     }
-    function greenLamp(){  // när vi trycker på den gröna knappen på hemsidan så skickas "greenOn" eller "greenOff" till MQTT
+    function yellowLamp(){  // när vi trycker på den gula knappen på hemsidan så skickas "yellowOn" eller "yellowOff" till MQTT
+        currentValue = document.getElementById("yellowSwitch").checked;
+        console.log(currentValue);
+        (currentValue) ? sendViaMQTT("yellowOn") : sendViaMQTT("yellowOff")
+    }
+    function greenLamp(){   // när vi trycker på den gröna knappen på hemsidan så skickas "greenOn" eller "greenOff" till MQTT
         currentValue = document.getElementById("greenSwitch").checked;
         console.log(currentValue);
         (currentValue) ? sendViaMQTT("greenOn") : sendViaMQTT("greenOff")
     }
-    function blueLamp(){  // när vi trycker på den blåa knappen på hemsidan så skickas "blueOn" eller "blueOff" till MQTT
-        currentValue = document.getElementById("blueSwitch").checked;
-        console.log(currentValue);
-        (currentValue) ? sendViaMQTT("blueOn") : sendViaMQTT("blueOff")
-    }
+   
     
-    function sendViaMQTT(color){ // här skickas meddelandet till MQTT. Alltså "blueOff", "blueOn", "redOff" etc.
+    function sendViaMQTT(color){    // här skickas meddelandet till MQTT. Alltså "yellowOff", "yelllowOn", "redOff" etc.
         console.log(color);
         message = new Paho.MQTT.Message(color.toString());
         message.destinationName = "lamp/lampa";
         client.send(message)
     }
-function onConnect(){ // om vi lyckas ansluta till MQTT
+function onConnect(){   // om vi lyckas ansluta till MQTT
     console.log("connected");
 }
 
-function onFail(){ // om vi misslyckas ansluta till MQTT
+function onFail(){  // om vi misslyckas ansluta till MQTT
     console.log("connection failed");
 }
 
 
-function startConnect() { // ansluter till MQTT
+function startConnect() {   // ansluter till MQTT
+    // Generate a random client ID
     clientID = "clientID_" + parseInt(Math.random() * 100);
-    host = "10.22.2.127";   // måste ändras för varje person
+    host = "192.168.0.116"; // måste ändras för varje person
     port = 1884;
-    
+    // Fetch the hostname/IP address and port number from the form
+
+    // Print output for the user in the messages div
+    // Initialize new Paho client connection
     client = new Paho.MQTT.Client(host, Number(port), clientID);
+
+    // Set callback handlers
+    //client.onConnectionLost = onConnectionLost;
+    //client.onMessageArrived = onMessageArrived;
 
     client.connect({ 
         onSuccess: onConnect,
